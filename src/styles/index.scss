@@ -1,0 +1,55 @@
+@import 'global';
+@import 'container';
+
+.homepage {
+	$phone: 768px;
+	$text-color: #303438;
+
+	min-height: 50vh;
+	@media (max-width: $phone) {
+		min-height: 95vh;
+	}
+
+	p a {
+		padding-bottom: 0.25em;
+
+		&:hover {
+			border-bottom-width: 0.08em;
+			border-bottom-color: inherit;
+			border-bottom-style: dotted;
+		}
+	}
+
+	section {
+		margin-top: 15%;
+		@media (max-width: $phone) {
+			margin-top: 30%;
+		}
+	}
+
+	.light {
+		font-size: 85%;
+		color: lighten($text-color, 35%);
+	}
+
+	h1, h2, h3 {
+		margin: 0;
+	}
+
+	.btn {
+		@extend .borderized;
+		display: inline-block;
+		padding: 1em 0;
+		margin: 0.5em 0;
+		box-sizing: border-box;
+
+		/* larger screens */
+		width: 45%;
+		margin: 0.5em 2.5%;
+
+		@media (max-width: $phone) {
+			width: 100%;
+			margin: 0.5em 0;
+		}
+	}
+}

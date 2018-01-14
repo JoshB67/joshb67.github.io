@@ -1,0 +1,43 @@
+$phone: 768px;
+$primary: #FFD27F;
+$player1: #EF476F;
+$player2: #118AB2;
+
+@mixin border($side) {
+	border-#{$side or top}: 0.1em solid #f8f8f8;
+}
+
+@mixin disabled($color:#ccc) {
+	background-color: $color;
+	cursor: not-allowed;
+	text-decoration: line-through;
+}
+
+body {
+	margin: 0;
+	font-family: raleway, "helvetica neue", helvetica, arial, sans-serif;
+	color: #303438;
+	background-color: #f8f8f8;
+}
+
+h1, h2, h3 {
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.borderized {
+	transition: background-color 0.25s;
+	border: 0.08em solid $primary;
+	border-radius: 0.2em;
+
+	&:hover {
+		background-color: lighten($primary, 22%);
+	}
+	&:active {
+		background-color: lighten($primary, 18%);
+	}
+}
